@@ -1,9 +1,12 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Homepage/Home";
+
 export default function App() {
   return (
-    <div className="flex items-center justify-center h-screen bg-green-600 text-2xl">
-      <h1>Syntax Forge</h1>
-      <br />
-      Tailwind CSS is working!
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
