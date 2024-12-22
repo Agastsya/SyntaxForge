@@ -1,5 +1,7 @@
 import MainIcon from "./Icons/MainIcon";
 import ArrowIcon from "./Icons/ArrowIcon";
+import "./Header.css";
+
 export default function Header() {
   return (
     <header className="bg-black text-white w-full h-16 border-white border-y border-t-0 border-l-0 border-r-0 flex justify-between pr-10 pl-5 pt-5 font-poppins">
@@ -11,39 +13,45 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="/how_it_works" className="hover:text-gray-400">
+            <a
+              href="/how_it_works"
+              className="hover:text-gray-400 text-gradient"
+            >
               Code Editor
             </a>
           </li>
           <li>
-            <a href="/case_studies" className="hover:text-gray-400">
+            <a
+              href="/case_studies"
+              className="hover:text-gray-400 text-gradient"
+            >
               Cases Studies
             </a>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400">
+            <a href="/resources" className="hover:text-gray-400 text-gradient">
               Resources
             </a>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400">
+            <a href="/resources" className="hover:text-gray-400 text-gradient">
               Docs
             </a>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400">
+            <a href="/resources" className="hover:text-gray-400 text-gradient">
               Support
             </a>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400">
+            <a href="/resources" className="hover:text-gray-400 text-gradient">
               About
             </a>
           </li>
         </ul>
       </div>
       <a href="/new_feature">
-        <div className="flex flex-row space-x-4 border-2 rounded-md border-white mb-1 pt-1 pr-2 pl-2 pb-1 center hover:bg-white hover:text-black">
+        <div className="flex flex-row space-x-4 border-2 rounded-md border-white mb-1 pt-1 pr-2 pl-2 pb-1 hover:bg-white hover:text-black">
           <p>Try now it's free</p>
           <ArrowIcon />
         </div>
