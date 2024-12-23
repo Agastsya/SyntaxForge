@@ -4,7 +4,7 @@ import "./Header.css";
 
 export default function Header() {
   return (
-    <header className="bg-black text-white w-full h-16 border-white border-y border-t-0 border-l-0 border-r-0 flex justify-between pr-10 pl-5 pt-5 font-poppins">
+    <header className="bg-black text-white w-full h-16  flex justify-between pr-10 pl-5 pt-5 font-poppins">
       <div>
         <ul className="flex flex-row space-x-8">
           <li>
