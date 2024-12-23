@@ -16,16 +16,22 @@ export default function Home() {
         <div className="pt-40 w-[50%] space-y-10 ">
           <span className="text-7xl text-gradient-blue">Code As you like</span>{" "}
           <br />
-          <p className="text-gradient-blue">
+          <p className="text-gradient-gold">
             Syntax Forge is an intuitive website designed for writing and
             testing HTML, CSS, and JavaScript code in real time. It provides a
             split-pane editor with instant previews, enabling seamless
             experimentation and debugging.
           </p>
-          <button className="border-2 border-white rounded-md p-2 hover:bg-white hover:text-black font-poppins flex flex-row space-x-4">
-            <p> Start coding Now with Syntax Forge</p>
-            <ArrowIcon />
-          </button>
+          <div className="flex flex-row space-x-4">
+            <button className="border-2 border-white rounded-md p-2 hover:bg-white hover:text-black font-poppins flex flex-row space-x-4">
+              <p> For New Users</p>
+              <ArrowIcon />
+            </button>
+            <button className="border-2 border-white rounded-md p-2 hover:bg-white hover:text-black font-poppins flex flex-row space-x-4">
+              <p>Already a Member</p>
+              <ArrowIcon />
+            </button>
+          </div>
         </div>
       </div>
     </>

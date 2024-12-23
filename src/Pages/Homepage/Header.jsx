@@ -14,7 +14,7 @@ export default function Header() {
           </li>
           <li>
             <a
-              href="/how_it_works"
+              href="/code-editor"
               className="hover:text-gray-400 text-gradient"
             >
               Code Editor
@@ -44,8 +44,11 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400 text-gradient">
-              About
+            <a
+              href="/resources"
+              className="hover:text-gray-400 text-gradient btn-gradient-gold"
+            >
+              Get Premium
             </a>
           </li>
         </ul>
