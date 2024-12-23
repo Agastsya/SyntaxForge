@@ -12,8 +12,16 @@
   }
 }
 
-.text-gradient-body {
+.text-gradient-blue {
   background: linear-gradient(to right, #00bcd4, #3f51b5, #00bcd4);
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s ease infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, #f44336, #ffeb3b, #f44336);
   background-size: 200% 200%;
   background-clip: text;
   color: transparent;
