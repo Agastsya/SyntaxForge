@@ -2,6 +2,8 @@
 
 Syntax Forge is an intuitive and powerful code editor built for writing and testing HTML, CSS, and JavaScript in real-time. Designed with developers in mind, it offers a split-pane editor with instant previews, enabling seamless experimentation and debugging.
 
+Checkout Our Demo : https://syntax-forge.vercel.app/
+
 ---
 
 ## Features
