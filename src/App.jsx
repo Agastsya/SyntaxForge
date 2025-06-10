@@ -13,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/code-editor" element={<CodeEditor />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/code-editor" element={<CodeEditor />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,6 @@
 import MainIcon from "./Icons/MainIcon";
 import ArrowIcon from "./Icons/ArrowIcon";
+import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default function Header() {
@@ -8,57 +9,57 @@ export default function Header() {
       <div>
         <ul className="flex flex-row space-x-8">
           <li>
-            <a href="/" className="flex items-center hover:text-gray-400">
+            <Link to="/" className="flex items-center hover:text-gray-400">
               <MainIcon className="w-10 h-10 text-white hover:text-gray-500" />
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/code-editor"
+            <Link
+              to="/code-editor"
               className="hover:text-gray-400 text-gradient"
             >
               Code Editor
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/case_studies"
+            <Link
+              to="/case_studies"
               className="hover:text-gray-400 text-gradient"
             >
               Cases Studies
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400 text-gradient">
+            <Link to="/resources" className="hover:text-gray-400 text-gradient">
               Resources
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400 text-gradient">
+            <Link to="/resources" className="hover:text-gray-400 text-gradient">
               Docs
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/resources" className="hover:text-gray-400 text-gradient">
+            <Link to="/resources" className="hover:text-gray-400 text-gradient">
               Support
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/resources"
+            <Link
+              to="/resources"
               className="hover:text-gray-400 text-gradient btn-gradient-gold"
             >
               Get Premium
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-      <a href="/new_feature">
+      <Link to="/new_feature">
         <div className="flex flex-row space-x-4 border-2 rounded-md border-white mb-1 pt-1 pr-2 pl-2 pb-1 hover:bg-white hover:text-black">
           <p>Try now it's free</p>
           <ArrowIcon />
         </div>
-      </a>
+      </Link>
     </header>
   );
 }
