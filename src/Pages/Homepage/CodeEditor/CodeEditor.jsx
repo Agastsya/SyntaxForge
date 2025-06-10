@@ -30,7 +30,9 @@ export default function CodeEditor() {
       <div className="flex flex-col h-screen">
         {/*Output Section*/}
         <div className="flex-grow bg-white min-h-[40vh] ">
-          <h1 className="text-white bg-gray-500 text-xl">OUTPUT</h1>
+          <h1 className="text-white bg-gray-800 pl-1 border border-gray-950">
+            OUTPUT
+          </h1>
           <iframe
             srcDoc={output}
             className="w-full h-[calc(100%-4rem)]"
