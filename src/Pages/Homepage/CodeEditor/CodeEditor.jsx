@@ -27,41 +27,51 @@ export default function CodeEditor() {
   }, [html, css, jscript]);
   return (
     <>
-      <div className="h-screen">
-        <div className="w-screen h-1/2 bg-white">
-          <h1 className="text-white">OUTPUT</h1>
-          <iframe srcDoc={output} className="h-screen w-screen"></iframe>
+      <div className="flex flex-col h-screen">
+        {/*Output Section*/}
+        <div className="flex-grow bg-white min-h-[40vh] ">
+          <h1 className="text-white bg-gray-500 text-xl">OUTPUT</h1>
+          <iframe
+            srcDoc={output}
+            className="w-full h-[calc(100%-4rem)]"
+          ></iframe>
         </div>
         /**Input boxes for html,css and jscript */
-        <div className="flex w-screen h-1/2 gap-2">
+        <div className="flex flex-col md:flex-row w-full flex-grow gap-2 bg-gray-800">
+          {/*HTML Section*/}
           <div>
-            <h1 className="text-white border border-white pl-1">HTML</h1>
+            <h1 className="text-white  pl-1">HTML</h1>
             <textarea
               rows={12}
               cols={50}
-              class="input-box"
+              className="input-box w-full h-[calc(100%-2rem)] bg-gray-700"
               value={html}
-              onChange={(e) => setHtml(e.target.value)}
+              onChange={(e) => setCss(e.target.value)}
             />
           </div>
-          <div>
-            <h1 className="text-white border border-white pl-1">CSS</h1>
 
+          {/**CSS SECTION */}
+
+          <div>
+            <h1 className="text-white  pl-1">CSS</h1>
             <textarea
               rows={12}
               cols={50}
-              className="input-box"
+              className="input-box w-full h-[calc(100%-2rem)] bg-gray-700"
               value={css}
               onChange={(e) => setCss(e.target.value)}
             />
           </div>
+
+          {/**Javascript SECTION */}
+
           <div>
-            <h1 className="text-white border border-white pl-1">Javascript</h1>
+            <h1 className="text-white pl-1">Javascript</h1>
 
             <textarea
               rows={12}
               cols={50}
-              className="input-box"
+              className="input-box w-full h-[calc(100%-2rem)] bg-gray-700"
               value={jscript}
               onChange={(e) => setJscript(e.target.value)}
             />
