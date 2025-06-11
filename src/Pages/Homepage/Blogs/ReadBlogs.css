@@ -1,0 +1,8 @@
+.toggle-category {
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #22d3ee;
+  background-color: #1f2937;
+}
