@@ -23,10 +23,10 @@ export default function Header() {
           </li>
           <li>
             <Link
-              to="/case_studies"
+              to="/read-blogs"
               className="hover:text-gray-400 text-gradient"
             >
-              Cases Studies
+              Read Blogs
             </Link>
           </li>
           <li>
