@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Blogs from "./Blogs";
 import BlogCard from "./BlogCard";
 import "./ReadBlogs.css";
-const apikey = process.env.NEWS_API_KEY;
+import { Link } from "react-router-dom";
+const apikey = "9d07c3606dc3415fa7a87b6c50da395d";
 
 export default function ReadBlogs() {
   const [articles, setArticles] = useState([]);
@@ -49,8 +50,8 @@ export default function ReadBlogs() {
         </button>
       </div>
       <div>
-        {articles.map((article) => (
-          <div key={article.url}>
+        {articles.map((article, index) => (
+          <Link key={article.url} to={`/blogs/${index}`}>
             <BlogCard
               author={article.author}
               title={article.title}
@@ -59,7 +60,7 @@ export default function ReadBlogs() {
               date={article.publishedAt}
               content={article.content}
             />
-          </div>
+          </Link>
         ))}
         ;
       </div>

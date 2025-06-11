@@ -19,8 +19,12 @@ export default function BlogCard({
 
       {/*Content Layer Layer*/}
       <div className="flex p-2 gap-2">
-        <img src={image} className="max-h-[10rem] max-w-[10rem]" alt="" />
-        <div className="text-white">{content}</div>
+        <img src={image} className="max-h-[20rem] max-w-[20rem]" alt="" />
+        <div className="text-white">
+          {content}
+          {content}
+          {content}
+        </div>
       </div>
     </div>
   );
