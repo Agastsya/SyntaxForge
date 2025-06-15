@@ -1,0 +1,11 @@
+.my-button {
+  background-color: cyan;
+  color: black;
+  max-width: fit-content;
+}
+.body {
+  display: grid;
+  justify-items: center;
+  height: 100vh;
+  align-content: center;
+}
