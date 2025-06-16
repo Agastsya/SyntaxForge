@@ -8,13 +8,17 @@ const task_creator = (task) => {
 };
 
 // DELETE TASK
-const task_destroyer = (task) => {
-  return BackendSyntaxForge.deleteOne({ task: task });
+const task_destroyer = (id) => {
+  return BackendSyntaxForge.findByIdAndDelete(id);
 };
 
 // UPDATE TASK
-const task_updater = (task) => {
-  return BackendSyntaxForge.updateOne({ task: task });
+const task_updater = (id, newTask) => {
+  return BackendSyntaxForge.findByIdAndUpdate(
+    id,
+    { $set: { task: newTask } },
+    { new: true }
+  );
 };
 
 // GET TASK

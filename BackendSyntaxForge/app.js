@@ -50,15 +50,29 @@ app.get("/readAll", async (req, res) => {
 });
 
 // Update Object
-app.post("/update", async (req, res) => {
+app.put("/update/:id", async (req, res) => {
   const task = req.body.task;
+  const id = req.params.id;
   await taskFunctions
-    .task_updater(task)
+    .task_updater(id, task)
     .then(() => {
       res.send("Updated task");
     })
     .catch(() => {
       res.send("Error Encountered");
+    });
+});
+
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  await taskFunctions
+    .task_destroyer(id)
+    .then(() => {
+      res.send("task removed");
+      console.log("task removed");
+    })
+    .catch((err) => {
+      console.log("error : " + err);
     });
 });
 
