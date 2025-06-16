@@ -1,20 +1,21 @@
-const express = require("express");
-const app = express();
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import taskFunctions from "../BackendSyntaxForge/routes/create.js";
 
 {
   /* Middlewares */
 }
-app.use((req, res, next) => {
-  console.log("Middleware executed");
-  next();
-});
+
+const app = express();
+app.use(cors());
+app.use(express.json());
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 {
-  /* SERVER CONENCTION */
+  /* DATABASE CONENCTION */
 }
-mongoose = require("mongoose");
 mongoose
   .connect("mongodb://localhost:27017/BackendSyntaxForge")
   .then(() => {
@@ -23,35 +24,42 @@ mongoose
   .catch((err) => {
     console.log("Error :" + err);
   });
-const bsfSchema = new mongoose.Schema({
-  name: String,
-  age: Number,
-  email: String,
+
+{
+  /*Routes*/
+}
+
+//Create Object Route
+app.post("/add", async (req, res) => {
+  const task = req.body.task;
+
+  taskFunctions
+    .task_creator(task)
+    .then(() => {
+      res.send("API IS WORKING");
+    })
+    .catch((err) => {
+      res.send("ERROR : " + err.message);
+    });
 });
 
-const BackendSyntaxForge = mongoose.model("BackendSyntaxForge", bsfSchema);
-
-const adder = async () => {
-  const newUser = await BackendSyntaxForge.create({
-    name: "Rajneesh Singh",
-    age: 24,
-    email: "rajneeshsingh04@gmail.com",
-  });
-};
-adder();
-console.log("set time out checker");
-
-app.get("/", (req, res) => {
-  res.send("Hello world from BackendSyntaxForge!");
-  console.log("root route accessed");
+// Read Objects
+app.get("/readAll", async (req, res) => {
+  const data = await taskFunctions.task_reader();
+  res.json(data);
 });
 
-app.get("/dynamic", (req, res) => {
-  res.render("index", { name: "Agastsya Joshi" });
-});
-
-app.get("/dynamic/:name", (req, res) => {
-  res.send(`Hello ${req.params.name} from BackendSyntaxForge!`);
+// Update Object
+app.post("/update", async (req, res) => {
+  const task = req.body.task;
+  await taskFunctions
+    .task_updater(task)
+    .then(() => {
+      res.send("Updated task");
+    })
+    .catch(() => {
+      res.send("Error Encountered");
+    });
 });
 
 app.listen(3000, (req, res) => {
