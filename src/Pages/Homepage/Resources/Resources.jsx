@@ -81,7 +81,7 @@ export default function Resources() {
         <input
           type="text"
           value={task}
-          className="text-black min-w-[50vw] pl-1"
+          className="text-black min-w-[50vw] pl-1 focus:outline-none"
           onChange={(e) => setTask(e.target.value)}
         />
 
@@ -95,20 +95,29 @@ export default function Resources() {
       <div className="mt-2">
         {data.map((item, done = false) => (
           <div
-            className="text-black bg-white h-[4vh] m-1 pl-1 pr-1 min-w-[50vw] flex justify-between items-center"
+            className="text-black bg-white h-[4vh] m-1 pl-1 pr-1 min-w-[50vw] flex justify-between items-center cursor-pointer"
             key={item._id}
+            onClick={() => {
+              setEditId(item._id);
+              setEditText("");
+            }}
           >
             {editId === item._id ? (
-              //Toggle input box
+              //UPDATE INPUT BOX
               <div className="flex justify-between w-full">
                 <input
                   type="text"
-                  className="w-full bg-gray-200"
+                  className="w-full bg-gray-200 focus:outline-none"
                   placeholder={item.task}
                   value={editText}
                   onChange={(e) => {
                     setEditText(e.target.value);
-                    console.log(editText);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key == "Enter") {
+                      e.preventDefault();
+                      taskUpdater(item._id);
+                    }
                   }}
                 />
                 <div className="flex gap-x-1">
