@@ -26,7 +26,7 @@ export default function ReadBlogs() {
       <div className="flex gap-10 p-10">
         <button
           className="bg-white toggle-category"
-          onClick={() => setCategory("sports")}
+          onClick={() => setCategory("business")}
         >
           business
         </button>

@@ -26,7 +26,7 @@ export default function Header() {
               to="/read-blogs"
               className="hover:text-gray-400 text-gradient"
             >
-              Read Blogs
+              DSA Planner
             </Link>
           </li>
           <li>

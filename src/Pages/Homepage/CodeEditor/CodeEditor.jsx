@@ -48,7 +48,7 @@ export default function CodeEditor() {
               cols={50}
               className="input-box w-full h-[calc(100%-2rem)] bg-gray-700"
               value={html}
-              onChange={(e) => setCss(e.target.value)}
+              onChange={(e) => setHtml(e.target.value)}
             />
           </div>
 
