@@ -7,6 +7,7 @@ import Resources from "./Pages/Homepage/Resources/Resources";
 import ReadBlogs from "./Pages/Homepage/Blogs/ReadBlogs";
 import Blogs from "./Pages/Homepage/Blogs/Blogs";
 import { Toaster } from "sonner";
+import CodeGenerator from "./Pages/CodeGenerator/CodeGenerator";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/code-editor" element={<CodeEditor />} />
         <Route path="/read-blogs" element={<ReadBlogs />} />
+        <Route path="/ai-forge" element={<CodeGenerator />} />
         <Route path="/blogs/:blogId" element={<Blogs />} />
       </Routes>
     </Router>

@@ -26,17 +26,17 @@ export default function Header() {
               to="/read-blogs"
               className="hover:text-gray-400 text-gradient"
             >
+              Articles
+            </Link>
+          </li>
+          <li>
+            <Link to="/resources" className="hover:text-gray-400 text-gradient">
               DSA Planner
             </Link>
           </li>
           <li>
-            <Link to="/resources" className="hover:text-gray-400 text-gradient">
-              Resources
-            </Link>
-          </li>
-          <li>
-            <Link to="/resources" className="hover:text-gray-400 text-gradient">
-              Docs
+            <Link to="/ai-forge" className="hover:text-gray-400 text-gradient">
+              AI Forge
             </Link>
           </li>
           <li>

@@ -4,7 +4,7 @@ import Blogs from "./Blogs";
 import BlogCard from "./BlogCard";
 import "./ReadBlogs.css";
 import { Link } from "react-router-dom";
-const apikey = "9d07c3606dc3415fa7a87b6c50da395d";
+const apikey = import.meta.env.VITE_NEWS_API_KEY;
 
 export default function ReadBlogs() {
   const [articles, setArticles] = useState([]);
