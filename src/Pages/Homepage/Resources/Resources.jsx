@@ -2,8 +2,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 export default function Resources() {
+  // States for managing task
   const [task, setTask] = useState("");
   const [data, setData] = useState([]);
+
+  // States for managing update
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState("");
+
   const taskGetter = async () => {
     try {
       const response = await axios.get("http://localhost:3000/readAll");
@@ -33,6 +39,20 @@ export default function Resources() {
     }
   };
 
+  const taskUpdater = (id) => {
+    try {
+      if (editText.trim() === "") return;
+      axios.put(`http://localhost:3000/update/${id}`, {
+        task: editText,
+      });
+      setEditId(null);
+      setEditText("");
+      taskGetter();
+    } catch (e) {
+      console.log("Error : " + e);
+    }
+  };
+
   useEffect(() => {
     taskGetter();
   }, []);
@@ -56,29 +76,71 @@ export default function Resources() {
         </button>
       </form>
       <div className="mt-2">
-        {data.map((e) => (
+        {data.map((item) => (
           <div
             className="text-black bg-white h-[4vh] m-1 pl-1 pr-1 min-w-[50vw] flex justify-between items-center"
-            key={e._id}
+            key={item._id}
           >
-            {e.task}
-            <div className="flex gap-x-1">
-              <button
-                className="bg-red-500 h-6 pl-1 pr-1 text-white font-extrabold "
-                onClick={() => taskDestroyer(e._id)}
-              >
-                X
-              </button>
-              <button
-                className="bg-green-500 h-6 pl-1 pr-1 text-white font-extrabold "
-                onClick={() => taskDestroyer(e._id)}
-              >
-                Mark
-              </button>
-              <button className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold">
-                Update
-              </button>
-            </div>
+            {editId === item._id ? (
+              //Toggle input box
+              <div className="flex justify-between w-full">
+                <input
+                  type="text"
+                  placeholder={item.task}
+                  value={editText}
+                  onChange={(e) => {
+                    setEditText(e.target.value);
+                    console.log(editText);
+                  }}
+                />
+                <div>
+                  <button
+                    className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
+                    onClick={() => taskUpdater(item._id)}
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            ) : (
+              //Toggle opertion buttons
+              <div className="flex justify-between w-full">
+                <div>{item.task}</div>
+                <div className="flex gap-x-1">
+                  <button
+                    className="bg-red-500 h-6 pl-1 pr-1 text-white font-extrabold "
+                    onClick={() => taskDestroyer(item._id)}
+                  >
+                    X
+                  </button>
+                  <button
+                    className="bg-green-500 h-6 pl-1 pr-1 text-white font-extrabold "
+                    onClick={() => taskDestroyer(item._id)}
+                  >
+                    Mark
+                  </button>
+                  {item._id === null ? (
+                    <div>
+                      <button
+                        className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
+                        onClick={() => taskUpdater(item._id)}
+                      >
+                        Save
+                      </button>
+                    </div>
+                  ) : (
+                    <div>
+                      <button
+                        className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
+                        onClick={() => setEditId(item._id)}
+                      >
+                        Edit
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
