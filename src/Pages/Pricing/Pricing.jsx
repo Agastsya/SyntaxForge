@@ -32,7 +32,7 @@ export default function Pricing() {
                 <span className="text-4xl font-extrabold">{plan.price}</span>
                 <span className="text-gray-400">/{plan.period}</span>
               </div>
-              <button className="w-full py-2 bg-purple-600 rounded-md font-semibold hover:bg-purple-500 transition">
+              <button className="w-full py-2 bg-gray-600 rounded-md font-semibold hover:bg-purple-500 transition">
                 Choose {plan.name}
               </button>
             </div>
@@ -89,8 +89,8 @@ const PRICING_DATA = [
   {
     name: "Enterprise",
     tagline: "Custom solutions for large organizations",
-    price: "Contact Us",
-    period: "",
+    price: "₹3000",
+    period: "month",
     iconComponent: <RightIcon />,
     benefits: [
       "Unlimited code edits",

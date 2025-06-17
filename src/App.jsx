@@ -9,6 +9,7 @@ import Blogs from "./Pages/Homepage/Blogs/Blogs";
 import { Toaster } from "sonner";
 import CodeGenerator from "./Pages/CodeGenerator/CodeGenerator";
 import Pricing from "./Pages/Pricing/Pricing";
+import Support from "./Pages/Support/Support";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/ai-forge" element={<CodeGenerator />} />
         <Route path="/blogs/:blogId" element={<Blogs />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     </Router>
   );

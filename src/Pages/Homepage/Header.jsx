@@ -40,13 +40,13 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link to="/resources" className="hover:text-gray-400 text-gradient">
-              Support
+            <Link to="/support" className="hover:text-gray-400 text-gradient">
+              Contact Us
             </Link>
           </li>
           <li>
             <Link
-              to="/resources"
+              to="/pricing"
               className="hover:text-gray-400 text-gradient btn-gradient-gold"
             >
               Get Premium
