@@ -54,9 +54,11 @@ export default function Header() {
           </li>
         </ul>
       </div>
-      <Link to="/new_feature">
+      <Link to="/ai-forge">
         <div className="flex flex-row space-x-4 border-2 rounded-md border-white mb-1 pt-1 pr-2 pl-2 pb-1 hover:bg-white hover:text-black">
-          <p>Try now it's free</p>
+          <MainIcon className="w-10 h-10 text-white hover:text-gray-500" />
+
+          <p>Try AI Forge it's free</p>
           <ArrowIcon />
         </div>
       </Link>

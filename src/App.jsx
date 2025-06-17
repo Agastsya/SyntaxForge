@@ -8,6 +8,7 @@ import ReadBlogs from "./Pages/Homepage/Blogs/ReadBlogs";
 import Blogs from "./Pages/Homepage/Blogs/Blogs";
 import { Toaster } from "sonner";
 import CodeGenerator from "./Pages/CodeGenerator/CodeGenerator";
+import Pricing from "./Pages/Pricing/Pricing";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/read-blogs" element={<ReadBlogs />} />
         <Route path="/ai-forge" element={<CodeGenerator />} />
         <Route path="/blogs/:blogId" element={<Blogs />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
     </Router>
   );
