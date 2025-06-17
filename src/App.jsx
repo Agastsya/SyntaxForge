@@ -6,10 +6,12 @@ import CodeEditor from "./Pages/Homepage/CodeEditor/CodeEditor";
 import Resources from "./Pages/Homepage/Resources/Resources";
 import ReadBlogs from "./Pages/Homepage/Blogs/ReadBlogs";
 import Blogs from "./Pages/Homepage/Blogs/Blogs";
+import { Toaster } from "sonner";
 
 export default function App() {
   return (
     <Router className="dark">
+      <Toaster />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

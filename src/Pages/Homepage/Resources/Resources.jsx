@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { FaPen } from "react-icons/fa6";
+import { toast } from "sonner";
 
 export default function Resources() {
   // States for managing task
@@ -15,41 +17,50 @@ export default function Resources() {
       const response = await axios.get("http://localhost:3000/readAll");
       setData(response.data);
     } catch (e) {
-      console.log("error : " + e);
+      toast.error("ERROR : " + e);
     }
   };
-  const taskAdder = () => {
-    if (task.trim() === "") return;
-    axios
+  const taskAdder = async () => {
+    if (task.trim() === "") {
+      toast.error("Please Enter your task");
+      return;
+    }
+    await axios
       .post("http://localhost:3000/add", {
         task: task,
       })
       .then(() => {
+        toast.success("New Task Added");
         setTask("");
         taskGetter();
+      })
+      .catch(() => {
+        toast.error("ERROR : " + e);
       });
   };
 
-  const taskDestroyer = (id) => {
+  const taskDestroyer = async (id) => {
     try {
-      axios.delete(`http://localhost:3000/delete/${id}`);
+      await axios.delete(`http://localhost:3000/delete/${id}`);
       taskGetter();
+      toast.success("Task Deleted");
     } catch (e) {
-      console.log("Error : " + e);
+      toast.error("ERROR : " + e);
     }
   };
 
-  const taskUpdater = (id) => {
+  const taskUpdater = async (id) => {
     try {
       if (editText.trim() === "") return;
-      axios.put(`http://localhost:3000/update/${id}`, {
+      await axios.put(`http://localhost:3000/update/${id}`, {
         task: editText,
       });
+      toast.success("Task Updated");
       setEditId(null);
       setEditText("");
       taskGetter();
     } catch (e) {
-      console.log("Error : " + e);
+      toast.error("ERROR : " + e);
     }
   };
 
@@ -59,8 +70,13 @@ export default function Resources() {
 
   return (
     <div className="text-white items-center flex flex-col">
-      <h1 className="text-4xl">Task Planner</h1>
-      <form className="flex flex-col">
+      <h1 className="text-4xl">SyntaxForge Planner</h1>
+      <form
+        className="flex flex-col"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <label className="text-white">Enter new task</label>
         <input
           type="text"
@@ -68,6 +84,7 @@ export default function Resources() {
           className="text-black min-w-[50vw] pl-1"
           onChange={(e) => setTask(e.target.value)}
         />
+
         <button
           className="pl-1 border border-r-2 min-w-[50vw] hover:bg-white hover:text-black"
           onClick={() => taskAdder()}
@@ -76,7 +93,7 @@ export default function Resources() {
         </button>
       </form>
       <div className="mt-2">
-        {data.map((item) => (
+        {data.map((item, done = false) => (
           <div
             className="text-black bg-white h-[4vh] m-1 pl-1 pr-1 min-w-[50vw] flex justify-between items-center"
             key={item._id}
@@ -86,6 +103,7 @@ export default function Resources() {
               <div className="flex justify-between w-full">
                 <input
                   type="text"
+                  className="w-full bg-gray-200"
                   placeholder={item.task}
                   value={editText}
                   onChange={(e) => {
@@ -93,19 +111,27 @@ export default function Resources() {
                     console.log(editText);
                   }}
                 />
-                <div>
+                <div className="flex gap-x-1">
+                  <button
+                    className="bg-red-500 h-6 pl-1 pr-1 text-white font-extrabold"
+                    onClick={() => setEditId(null)}
+                  >
+                    X
+                  </button>
                   <button
                     className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
-                    onClick={() => taskUpdater(item._id)}
+                    onClick={() => {
+                      taskUpdater(item._id);
+                    }}
                   >
                     Save
                   </button>
                 </div>
               </div>
             ) : (
-              //Toggle opertion buttons
+              //Toggle operation buttons
               <div className="flex justify-between w-full">
-                <div>{item.task}</div>
+                <span>{item.task}</span>
                 <div className="flex gap-x-1">
                   <button
                     className="bg-red-500 h-6 pl-1 pr-1 text-white font-extrabold "
@@ -113,31 +139,13 @@ export default function Resources() {
                   >
                     X
                   </button>
+
                   <button
-                    className="bg-green-500 h-6 pl-1 pr-1 text-white font-extrabold "
-                    onClick={() => taskDestroyer(item._id)}
+                    className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
+                    onClick={() => setEditId(item._id)}
                   >
-                    Mark
+                    <FaPen color="white" />
                   </button>
-                  {item._id === null ? (
-                    <div>
-                      <button
-                        className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
-                        onClick={() => taskUpdater(item._id)}
-                      >
-                        Save
-                      </button>
-                    </div>
-                  ) : (
-                    <div>
-                      <button
-                        className="bg-blue-500 h-6 pl-1 pr-1 text-white font-extrabold"
-                        onClick={() => setEditId(item._id)}
-                      >
-                        Edit
-                      </button>
-                    </div>
-                  )}
                 </div>
               </div>
             )}

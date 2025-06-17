@@ -17,7 +17,9 @@ app.use(express.static("public"));
   /* DATABASE CONENCTION */
 }
 mongoose
-  .connect("mongodb://localhost:27017/BackendSyntaxForge")
+  .connect(
+    "mongodb+srv://agastsya007:king1111@initial.t0m8zpp.mongodb.net/BackendSyntaxForge?retryWrites=true&w=majority&appName=initial"
+  )
   .then(() => {
     console.log("Connected to MongoDB");
   })
