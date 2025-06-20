@@ -66,7 +66,9 @@ Make sure you have the following installed:
 ## Usage
 - Write HTML, CSS, and JavaScript in their respective panes.
 - See the output instantly in the preview pane.
-- Customize your experience through the settings menu.
+- AI Website Builder that uses perplexity sonar-pro model
+- DSA Planner
+- Read Latest Industry Related Blogs
 
 ---
 
