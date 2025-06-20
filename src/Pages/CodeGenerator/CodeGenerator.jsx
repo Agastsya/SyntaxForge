@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { toast } from "sonner";
 const CodeGeneratorSplitView = () => {
   // The text the user types to describe what they want
   const [prompt, setPrompt] = useState("");
@@ -92,7 +92,9 @@ ${html}
 
       if (!response.ok) {
         const err = await response.json().catch(() => ({}));
-        throw new Error(err.error?.message || response.statusText);
+        toast.failure(err.error?.message || response.statusText);
+      } else {
+        toast.success("Code Generated");
       }
 
       const data = await response.json();
