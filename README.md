@@ -1,4 +1,6 @@
 ## Syntax Forge
+![image](https://github.com/user-attachments/assets/e3020d59-00c3-4ec9-8d52-0edc8d657d2f)
+
 
 Syntax Forge is an intuitive and powerful code editor built for writing and testing HTML, CSS, and JavaScript in real-time. Designed with developers in mind, it offers a split-pane editor with instant previews, enabling seamless experimentation and debugging.
 
@@ -8,10 +10,20 @@ Checkout Our Demo : https://syntax-forge.vercel.app/
 
 ## Features
 - **Real-time Editing and Preview:** Instantly see changes in your code as you type.
+  ![image](https://github.com/user-attachments/assets/af420e06-114c-42f4-865f-3cc3cd69096e)
+
 - **Split-pane Editor:** Work on HTML, CSS, and JavaScript in parallel.
+  ![image](https://github.com/user-attachments/assets/bbd6222b-a40e-4ffb-9b47-a3892d48f1d5)
+
+- **AI Forge:** Use AI Forge to forge your very own website or ui components in seconds.
+  ![image](https://github.com/user-attachments/assets/44672506-57a5-444a-baeb-a7c4f57e213c)
+
 - **Interactive UI:** Smooth and responsive interface with modern design elements.
-- **Cross-browser Compatibility:** Optimized for a consistent experience across browsers.
-- **Customizable Themes:** Personalize your editor for a comfortable coding experience.
+  ![image](https://github.com/user-attachments/assets/644eb91c-c17d-40bb-a53c-012bfb628a53)
+
+- **DSA Planner:** Make plans for your problems that you will be solving **.
+  ![image](https://github.com/user-attachments/assets/c3be7a31-bab2-4e7b-aade-f354f1d6cf20)
+
 
 ---
 
