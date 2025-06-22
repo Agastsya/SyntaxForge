@@ -8,20 +8,35 @@ Checkout Our Demo : https://syntax-forge.vercel.app/
 
 ---
 
-## Features
-- **Real-time Editing and Preview:** Instantly see changes in your code as you type.
+# Features
+## **Real-time Editing and Preview** 
+Instantly see changes in your code as you type.
+
+
   ![image](https://github.com/user-attachments/assets/af420e06-114c-42f4-865f-3cc3cd69096e)
 
-- **Split-pane Editor:** Work on HTML, CSS, and JavaScript in parallel.
+## **Split-pane Editor** 
+Work on HTML, CSS, and JavaScript in parallel.
+
+
   ![image](https://github.com/user-attachments/assets/bbd6222b-a40e-4ffb-9b47-a3892d48f1d5)
 
-- **AI Forge:** Use AI Forge to forge your very own website or ui components in seconds.
+## **AI Forge** 
+Use AI Forge to forge your very own website or ui components in seconds.
+
+
   ![image](https://github.com/user-attachments/assets/44672506-57a5-444a-baeb-a7c4f57e213c)
 
-- **Interactive UI:** Smooth and responsive interface with modern design elements.
+## **Interactive UI** 
+Smooth and responsive interface with modern design elements.
+
+
   ![image](https://github.com/user-attachments/assets/644eb91c-c17d-40bb-a53c-012bfb628a53)
 
-- **DSA Planner:** Make plans for your problems that you will be solving **.
+## **DSA Planner** 
+Make plans for your problems that you will be solving **.
+
+
   ![image](https://github.com/user-attachments/assets/c3be7a31-bab2-4e7b-aade-f354f1d6cf20)
 
 
